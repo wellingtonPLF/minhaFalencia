@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt_BR" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>fiqueiPobre</title>
+<meta th:insert="~{fragments/headfrag :: head}"></meta>
+</head>
+<body style="margin: 0px">
+	
+	<div th:insert="~{fragments/navigation :: menu}"></div>
+	
+	<main style="text-align: center; background-color: black">
+		<div style="padding-top: 5px">
+			<img style="border: 2px solid black;" th:src="@{imagens/fiquepobre.png}"/>
+		</div>
+	</main>
+	
+	<div th:replace="~{fragments/footerfrag :: foot}"></div>
+</body>
+</html>

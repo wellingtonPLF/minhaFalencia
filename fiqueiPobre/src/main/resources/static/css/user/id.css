@@ -1,0 +1,9 @@
+.user{
+	display:flex; 
+	flex-direction: column;
+	width: 200px;
+}
+
+.user input{
+	color: black;
+}

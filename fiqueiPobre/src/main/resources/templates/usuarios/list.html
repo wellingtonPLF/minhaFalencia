@@ -1,0 +1,35 @@
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>fiqueiPobre</title>
+</head>
+<body>
+	<h1>Listagem de Usuarios</h1>
+	<div th:text="${mensagem}" style="color: blue"></div>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nome</th>
+				<th>CPF</th>
+				<th>Senha</th>
+				<th>Data de Nascimento</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="usuario : ${usuarios}">
+				<td>
+					<a th:href="@{/usuarios/{id}(id=${usuario.id})}"
+					th:text="${usuario.id}"></a>
+				</td>
+				<td th:text="${usuario.nome}"></td>
+				<td th:text="${usuario.cpf}"></td>
+				<!-- <td th:text="${#strings.substring(usuario.password,0,3)} + '...'"></td> -->
+				<td th:text="${#dates.format(usuario.data, 'dd/MM/yyyy')}"
+			    	style="text-align: center;"></td> 
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

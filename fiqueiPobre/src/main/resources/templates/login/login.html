@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login de Usuario</title>
+<link rel="stylesheet" th:href="@{/css/user/form.css}"/>
+</head>
+<body>
+	<h1>Login</h1>
+	<form th:action="@{/login}" method="POST" th:object="${usuario}">
+		<div class="change">
+		
+			<div th:if="${not #strings.isEmpty(mensagem)}"
+					th:utext="'<hr>'+ ${mensagem} +'<hr>'">
+			</div>
+			<label>Username:</label>
+			<input autocomplete="off" type="text" th:field="*{nome}"/>
+			<!-- <label>Senha:</label>
+			<input type="text" th:field="*{password}"/>  -->
+			
+			<label><input type="checkbox">Lembrar-me</label>
+		</div>
+		<button style="margin-top: 4px;" type="submit">Salvar</button>
+	</form>
+	<button style="padding: 0px;">
+		<a style="width: 300px;" th:href="@{/}">Cancelar</a>
+	</button>
+</body>
+</html>

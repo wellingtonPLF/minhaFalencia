@@ -1,0 +1,31 @@
+.menu{
+	width: 100vw; 
+	height: 50px; 
+	background-color: #E5E5E5; 
+	display: flex; 
+	justify-content: flex-end;	
+	border: 2px solid #808080;
+	align-items: center;
+	border-right: none;
+	border-left: none;
+}
+
+.menu button{
+	margin-right: 10px;
+	height: 30px;
+	padding: 0px 10px;	
+}
+
+.menu button a{
+	text-decoration: none;
+	color: white;
+}
+
+#nome{
+	background-color: white;
+	padding: 5px 10px;
+	height: 20px;
+	border-radius: 10px;
+	margin-right: 5px;
+	text-align: center;
+}

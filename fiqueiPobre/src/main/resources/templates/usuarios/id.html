@@ -1,0 +1,22 @@
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>fiqueiPobre</title>
+<link rel="stylesheet" th:href="@{/css/user/id.css}"/>
+</head>
+<body>
+	<h1>Usuario</h1>
+	<span th:object="${usuario}" class="user">
+		<label>Id:</label>
+		<input type="text" th:field="*{id}" disabled/>
+		<label>Nome:</label>
+		<input type="text" th:field="*{nome}" disabled/>
+		<label>Cpf:</label>
+		<input type="text" th:field="*{cpf}" disabled/>
+		<!-- <label>Password:</label>
+		<input type="text" th:field="*{password}" disabled/>  -->
+		<label>Data:</label>
+		<input type="text" th:field="*{data}" disabled/>
+	</span>
+</body>
+</html>

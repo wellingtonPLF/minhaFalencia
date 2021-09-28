@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pt_BR">
+<meta http-equiv="Content-Type" content="text/html" />
+<!-- Latest compiled and minified CSS -->
+<link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div th:fragment="menu" class="menu">
+			<button th:if="${session.usuario != null}" type="button" class="btn btn-dark">
+			<a th:href="@{/home}" 
+			style="text-decoration: none; 
+			color: black;">Client</a></button>
+			<button th:if="${session.usuario == null}" type="button" class="btn btn-dark">
+			<a th:href="@{/login}">Login</a></button>
+			<button type="button" class="btn btn-dark"><a th:href="@{/usuarios/form}">Cadastre-se</a></button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuario</title>
+</head>
+<style>
+	.lista{
+		display: flex; flex-direction: column; margin-bottom: 10px;
+	}
+	
+	.lista a{
+		width: 140px;
+		text-decoration: none;
+		color: white;
+		background-color: blue;
+		padding: 2px 10px;
+		border-radius: 100px;
+	}
+	
+	.lista label{
+		margin-top: 22px;
+	}
+</style>
+<body>
+	<div style="display: flex">
+		<h1 th:if="${session.usuario != null and !session.usuario.admin}">Cliente</h1>
+		<h1 th:if="${session.usuario != null and session.usuario.admin}">Administrador</h1>
+		<h1 th:if="${session.usuario != null}">: <span th:text="${session.usuario.nome}" 
+		style="margin-right: 15px;"></span></h1>
+	</div>
+
+	<div th:if="${session.usuario != null and !session.usuario.admin}">
+		<div class="lista">
+			<label>First Option: <a th:href="@{/apostas/minhaAposta}">Apostar</a></label>
+			<label>Second Option: <a>Favoritos</a></label>
+			<label>Third Option: <a>Historico de Apostas</a></label>
+		</div>
+	</div>
+	
+	<div th:if="${session.usuario != null and session.usuario.admin}">
+		<div class="lista">
+			<label>Fazer o sorteio: <a th:href="@{/sorteio/resultsorteio}">Sortear</a></label>
+		</div>
+	</div>
+	
+	<div style="display: flex">
+		<button><a th:href="@{/}" 
+		style="text-decoration: none; 
+		color: black;">Home</a></button>		
+		<form th:action="@{/login/out}">
+		<span th:if="${session.usuario != null}"> 
+			<button style="margin-left: 5px;" type="submit">Sair</button>
+		</span>
+		</form>
+	</div> 
+</body>
+</html>
