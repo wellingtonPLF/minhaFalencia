@@ -4,9 +4,25 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" th:href="@{/css/user/sorteio.css}"/>
+<!-- <script type="text/javascript" th:src="@{/js/testando.js}"/></script> -->
 <title>fiqueiPobre</title>
 </head>
 <body>
 	<h1>Sorteio</h1>
+	<form th:action="@{/sorteio/save}" method="POST">
+		<div style="margin-bottom: 5px; color: red" th:text="${warning}"></div>
+		<div style="margin-bottom: 5px; color: green" th:text="${mensagem}"></div>
+		<div th:if="${not #strings.isEmpty(sorteio)}"
+						th:utext="
+						'<div>|| Numero Do Sorteio: ' + ${sorteio.id} +'<div>' +
+						'<div>|| Data Do Sorteio: ' + ${dataSorteio} +'<div>' +
+						'<div>|| Premiação: $' + ${sorteio.precoPremio} +'<div>'+
+						'<div>|| Resultado Do Sorteio: ' + ${sorteio.resultado} +'<div>'
+						">
+		</div>
+		<button style="margin-top: 10px" type="submit">sortear</button>
+	</form>
+	<a th:href="@{/home}">voltar</a>
 </body>
 </html>

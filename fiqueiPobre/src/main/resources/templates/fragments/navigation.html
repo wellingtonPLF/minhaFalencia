@@ -10,8 +10,7 @@
 		<div th:fragment="menu" class="menu">
 			<button th:if="${session.usuario != null}" type="button" class="btn btn-dark">
 			<a th:href="@{/home}" 
-			style="text-decoration: none; 
-			color: black;">Client</a></button>
+			style="text-decoration: none;">Client</a></button>
 			<button th:if="${session.usuario == null}" type="button" class="btn btn-dark">
 			<a th:href="@{/login}">Login</a></button>
 			<button type="button" class="btn btn-dark"><a th:href="@{/usuarios/form}">Cadastre-se</a></button>

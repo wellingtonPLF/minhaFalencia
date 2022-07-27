@@ -5,28 +5,30 @@
 <title>FiquePobre</title>
 <link rel="stylesheet" th:href="@{/css/user/form.css}"/>
 </head>
-<body>
-	<h1>Cadastro de Clientes</h1>
-	<form th:action="@{/usuarios/save}" method="POST" th:object="${usuario}">
-		<div class="change">
-			<input type="hidden" th:field="*{id}"/>
-			<label>Nome:</label>
-			<input autocomplete="off" type="text" th:field="*{nome}"/>
-			<div th:if="${#fields.hasErrors('nome')}"th:errorclass="error"th:errors="*{nome}"></div>
-			<label>CPF:</label>
-			<input autocomplete="off" type="text" th:field="*{cpf}"/>
-			<div th:if="${#fields.hasErrors('cpf')}"th:errorclass="error"th:errors="*{cpf}"></div>
-			<label>Data de Nascimento:</label>
-			<input autocomplete="off" type="text" th:field="*{data}"/>
-			<div th:if="${#fields.hasErrors('data')}"th:errorclass="error"th:errors="*{data}"></div>
-			<!-- <label>Senha:</label>
-			<input type="text" th:field="*{password}"/>
-			<div th:if="${#fields.hasErrors('password')}"th:errorclass="error"th:errors="*{password}"></div>  -->
-		</div>
-		<button style="margin-top: 4px;" type="submit">Salvar</button>
-	</form>
-	<button style="padding: 0px;">
-		<a style="width: 300px;" th:href="@{/}">Cancelar</a>
-	</button>
+<body class="authentication">
+	<div class="centralizar">
+		<h1>Cadastro</h1>
+		<form th:action="@{/usuarios/save}" method="POST" th:object="${usuario}">
+			<div class="change">
+				<input type="hidden" th:field="*{id}"/>
+				<label>Nome:</label>
+				<input class="inputWidth"  autocomplete="off" type="text" th:field="*{nome}"/>
+				<div th:if="${#fields.hasErrors('nome')}"th:errorclass="error"th:errors="*{nome}"></div>
+				<label>CPF:</label>
+				<input class="inputWidth" autocomplete="off" type="text" th:field="*{cpf}"/>
+				<div th:if="${#fields.hasErrors('cpf')}"th:errorclass="error"th:errors="*{cpf}"></div>
+				<label>Data de Nascimento:</label>
+				<input class="inputWidth" autocomplete="off" type="text" th:field="*{data}"/>
+				<div th:if="${#fields.hasErrors('data')}"th:errorclass="error"th:errors="*{data}"></div>
+				<!-- <label>Senha:</label>
+				<input type="text" th:field="*{password}"/>
+				<div th:if="${#fields.hasErrors('password')}"th:errorclass="error"th:errors="*{password}"></div>  -->
+			</div>
+			<button style="margin-top: 4px;" type="submit">Salvar</button>
+		</form>
+		<button style="padding: 0px;">
+			<a style="width: 300px;" th:href="@{/}">Cancelar</a>
+		</button>
+	</div>
 </body>
 </html>

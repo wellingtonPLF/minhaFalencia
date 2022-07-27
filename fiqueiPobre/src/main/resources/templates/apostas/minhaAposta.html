@@ -5,24 +5,21 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>fiqueiPobre</title>
-<link rel="stylesheet" th:href="@{/css/user/form.css}"/>
+<link rel="stylesheet" th:href="@{/css/user/apostas.css}"/>
 </head>
-<style>
-	.change div{
-		color: black;
-	}
-</style>
 <body>
-	<h1>MinhaAposta</h1>
-	<form th:action="@{/apostas/save}" method="POST" th:object="${aposta}">
-		<div class="change">
-			<input type="hidden" th:field="*{id}"/>
-			<input type="text"/>
-		</div>
-		<button style="margin-top: 4px;" type="submit">Salvar</button>
-	</form>
-	<button style="padding: 0px;">
-		<a style="width: 300px;" th:href="@{/home}">Cancelar</a>
-	</button>
+	<div class="form">
+		<h1>Minha Aposta</h1>
+		<form th:action="@{/apostas/save}" method="POST" th:object="${aposta}">
+			<div class="change">
+				<input type="hidden" th:field="*{id}"/>
+				<input type="text"/>
+			</div>
+			<button style="margin-top: 4px;" type="submit">Salvar</button>
+		</form>
+		<button style="padding: 0px;">
+			<a style="width: 300px;" th:href="@{/home}">Cancelar</a>
+		</button>
+	</div>
 </body>
 </html>

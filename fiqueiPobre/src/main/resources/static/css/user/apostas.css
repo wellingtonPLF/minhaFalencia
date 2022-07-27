@@ -1,0 +1,37 @@
+
+body{
+	display: flex; 
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 90vh;
+	margin: 0px;
+}
+
+.form{
+	width: 250px;
+	display: flex; 
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form form{
+	display: flex; 
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+button{
+	width: 208px;
+}
+
+a {
+	text-decoration: unset;
+	color: black;
+}
+
+form input {
+	width: 200px;
+}

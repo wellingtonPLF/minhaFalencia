@@ -7,6 +7,29 @@ body{
 	margin: 0px;
 }
 
+.authentication{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.centralizar{
+	display: flex;
+	width: 250px;
+	padding-bottom: 30px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.centralizar form{
+	width: 200px;
+}
+
+.inputWidth{
+	width: 190px;
+}
+
 a{
 	text-decoration: none;
 	color: black;
@@ -21,7 +44,7 @@ a{
 button{
 	display: flex;
 	justify-content: center;
-	width: 300px;
+	width: 200px;
 }
 
 .change div{
