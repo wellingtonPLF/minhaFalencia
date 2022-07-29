@@ -23,15 +23,48 @@ body{
 	align-items: center;
 }
 
-button{
-	width: 208px;
-}
-
 a {
 	text-decoration: unset;
 	color: black;
 }
 
-form input {
-	width: 200px;
+.apostando{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+	margin: 3px 0px 3px 0px;	
 }
+
+.apostando button{
+	width: 48%;
+}
+
+.aposta{
+	display: flex;
+	border-radius: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	justify-content: center;
+	height: 20px; 
+	width: 100%;
+	color: white;
+	background-color: black;
+}
+
+.saveOrNot{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.saveOrNot button:nth-child(1), button:nth-child(3){
+	width: 127px;
+}
+
+.messages{
+	height: 20px; 
+	width: 100%; 
+	
+}
+
+

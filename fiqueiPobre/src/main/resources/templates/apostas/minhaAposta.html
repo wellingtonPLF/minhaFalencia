@@ -9,17 +9,37 @@
 </head>
 <body>
 	<div class="form">
-		<h1>Minha Aposta</h1>
-		<form th:action="@{/apostas/save}" method="POST" th:object="${aposta}">
-			<div class="change">
-				<input type="hidden" th:field="*{id}"/>
-				<input type="text"/>
+		<h1>Minha Aposta</h1>		
+		<form th:action="@{/apostas/choose}" method="POST" th:object="${aposta}">
+			<div style="display: flex; flex-wrap: wrap; width: 300px">
+			
+				<div th:each="nb : ${numbers}" >
+					<input 
+					type="checkbox"
+					th:field="*{aposta}" 
+					th:value="${nb}" 
+					th:text="${nb}" />
+				</div>
 			</div>
-			<button style="margin-top: 4px;" type="submit">Salvar</button>
+			<div class="aposta" th:if="${not #lists.isEmpty(aposta.aposta)}" th:text="${aposta.aposta}"></div>
+			<div class="aposta" th:if="${#lists.isEmpty(aposta.aposta)}"></div>
+			<div class="apostando">
+				<button type="submit">select</button>
+				<button type="submit" th:formaction="@{/apostas/minhaAposta}">clean</button>
+			</div>
+			<div class="messages">
+				<div style="color:green;" th:text="${success}"></div>
+				<div style="color:red;" th:text="${fail}"></div>
+				<div style="color:green;" th:text="${favorite}"></div>
+			</div>
+			<div class="saveOrNot">
+				<button type="submit" th:formaction="@{/apostas/save}">confirmar</button>
+				<button type="submit" th:formaction="@{/apostas/favorite}">★</button>
+				<button type="button">
+					<a style="width: 300px;" th:href="@{/home}">cancelar</a>
+				</button>
+			</div>
 		</form>
-		<button style="padding: 0px;">
-			<a style="width: 300px;" th:href="@{/home}">Cancelar</a>
-		</button>
 	</div>
 </body>
 </html>
