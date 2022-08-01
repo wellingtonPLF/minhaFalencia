@@ -35,7 +35,7 @@ public class Usuario implements Serializable{
 	
 	private boolean admin = false;
 	
-	@OneToMany(mappedBy="usuario", cascade=CascadeType.ALL, orphanRemoval=true, fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="usuario", cascade=CascadeType.ALL, orphanRemoval=true, fetch = FetchType.LAZY)
 	private List<Apostas> apostasFavoritas = new ArrayList<Apostas>();
 	
 	public Usuario() {}

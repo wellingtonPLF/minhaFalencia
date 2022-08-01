@@ -33,14 +33,16 @@
 	<div th:if="${session.usuario != null and !session.usuario.admin}">
 		<div class="lista">
 			<label>First Option: <a th:href="@{/apostas/minhaAposta}">Apostar</a></label>
-			<label>Second Option: <a>Favoritos</a></label>
-			<label>Third Option: <a>Historico de Apostas</a></label>
+			<label>Second Option: <a th:href="@{/favoritos/list}">Favoritos</a></label>
+			<label>Third Option: <a th:href="@{/apostas/list}">Historico de Apostas</a></label>
+			<label>Resultado Final das Apostas: <a th:href="@{/apostas/final}">Ver Resultado</a></label>
 		</div>
 	</div>
 	
 	<div th:if="${session.usuario != null and session.usuario.admin}">
 		<div class="lista">
 			<label>Fazer o sorteio: <a th:href="@{/sorteio/resultsorteio}">Sortear</a></label>
+			<label>Simular sorteio: <a th:href="@{/sorteio/simulador}">Simular</a></label>
 		</div>
 	</div>
 	

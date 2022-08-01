@@ -9,14 +9,13 @@
 </head>
 <body style="margin: 0px">
 	
-	<div th:insert="~{fragments/navigation :: menu}"></div>
+	<div style="height: 7.2vh" th:insert="~{fragments/navigation :: menu}"></div>
 	
-	<main style="text-align: center; background-color: black">
-		<div style="padding-top: 5px">
-			<img style="border: 2px solid black;" th:src="@{imagens/fiquepobre.png}"/>
-		</div>
+	<main style="text-align: center; background-color: black; height: 85.6vh;
+	display: flex; justify-content: center; align-items: center">
+		<img style="border: 2px solid black;" th:src="@{imagens/fiquepobre.png}"/>
 	</main>
 	
-	<div th:replace="~{fragments/footerfrag :: foot}"></div>
+	<div style="height: 7.2vh" th:replace="~{fragments/footerfrag :: foot}"></div>
 </body>
 </html>

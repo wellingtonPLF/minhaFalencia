@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuario</title>
+<link rel="stylesheet" th:href="@{/css/user/sorteio.css}"/>
+</head>
+<body>
+	<h1 style="margin-bottom: 10px">Simulador</h1>
+	<form th:action="@{/sorteio/simulation}" method="POST">
+		<div style="margin-bottom: 5px">
+			<button type="submit">Executar Simulação</button>
+			<button type="submit" th:formaction="@{/sorteio/deleteLast}">Remover Ultimo Sorteio</button>
+		</div>
+		<button style="margin-bottom: 5px; width: 300px">
+			<a style="display: block; width: 100%; color: black; 
+			text-decoration: unset" th:href="@{/home}">Voltar</a>
+		</button>
+		<div style="color: red" th:text="${warning}"></div>
+		<div style="color: green" th:text="${mensagem}"></div>
+		<div class="simulationResult" th:if="${#strings.isEmpty(sorteio)}"></div>
+		<div class="simulationResult" th:if="${not #strings.isEmpty(sorteio)}"
+						th:utext="
+						'<div>|| Numero Do Sorteio: ' + ${sorteio.id} +'<div>' +
+						'<div>|| Data Do Sorteio: ' + ${dataSorteio} +'<div>' +
+						'<div>|| Premiação: $' + ${sorteio.precoPremio} +'<div>'+
+						'<div>|| Resultado Do Sorteio: ' + ${sorteio.resultado} +'<div>'
+						">
+		</div>
+	</form>	
+</body>
+</html>

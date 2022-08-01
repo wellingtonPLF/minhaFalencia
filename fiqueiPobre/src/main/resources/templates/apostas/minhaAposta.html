@@ -9,12 +9,23 @@
 </head>
 <body>
 	<div class="form">
-		<h1>Minha Aposta</h1>		
+		<h1>Minha Aposta</h1>
 		<form th:action="@{/apostas/choose}" method="POST" th:object="${aposta}">
+			<div th:object="${favorito}">
+				<select style="margin-bottom: 10px; width: 300px" th:field="*{id}">
+					<option  
+				    th:value="null" 
+				    th:text="null"></option>
+				    <option 
+				    th:each="i : ${favoritos}" 
+				    th:value="${i.id}" 
+				    th:text="${i.numeros}"></option>
+				</select>			
+			</div>
 			<div style="display: flex; flex-wrap: wrap; width: 300px">
-			
 				<div th:each="nb : ${numbers}" >
 					<input 
+					th:checked="${nb} == 1"
 					type="checkbox"
 					th:field="*{aposta}" 
 					th:value="${nb}" 
@@ -34,7 +45,7 @@
 			</div>
 			<div class="saveOrNot">
 				<button type="submit" th:formaction="@{/apostas/save}">confirmar</button>
-				<button type="submit" th:formaction="@{/apostas/favorite}">★</button>
+				<button style="color: #FFBB3A;" type="submit" th:formaction="@{/favoritos/favorite}">★</button>
 				<button type="button">
 					<a style="width: 300px;" th:href="@{/home}">cancelar</a>
 				</button>

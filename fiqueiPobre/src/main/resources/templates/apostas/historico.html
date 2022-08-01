@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuario</title>
+<style>
+	h1{
+		margin:2px;
+	}
+	
+	a{
+		color: black;
+		display: block; 
+		width: 150px; 
+		text-decoration: unset;
+	}
+</style>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 80vh">
+	<h1>Historico</h1>
+	<ul>
+		<li th:each="aposta : ${apostas}" th:text="${aposta.aposta}"></li>
+	</ul> 
+	<button style="margin-top: 5px;" type="button">
+		<a th:href="@{/home}">cancelar</a>
+	</button>
+</body>
+</html>

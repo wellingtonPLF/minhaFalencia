@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Usuario</title>
+<style>
+	h3{
+		margin:2px;
+	}	
+	
+	h1{
+		margin:2px;
+	}
+	
+	a{
+		color: black;
+		display: block; 
+		width: 100px; 
+		padding: 10px 0px; 
+		text-decoration: unset;
+	}
+</style>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 80vh">
+	<h1>Resultado Das Apostas:</h1> 
+	<hr>
+	<h3 th:if="${finalResult}" style="color: red">
+		Infelizmente no sorteio atual nenhuma das apostas foram corretas!
+	</h3>
+	<h2 th:if="not ${finalResult}" style="color: green">
+	 	Parabéns, uma de suas apostas foi correta!
+	</h2>
+	<hr>
+	<button>
+		<a th:href="@{/home}">Voltar</a>
+	</button>
+</body>
+</html>

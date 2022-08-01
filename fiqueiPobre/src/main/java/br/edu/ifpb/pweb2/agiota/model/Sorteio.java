@@ -14,7 +14,6 @@ public class Sorteio implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private Integer numero;
 	
 	@ElementCollection
 	@CollectionTable(name="resultado")
@@ -27,10 +26,17 @@ public class Sorteio implements Serializable{
 
 	public Sorteio() {}
 	
-	public Sorteio(Integer id, Integer numero, Date horaSorteio) {
+	
+	public Sorteio(Integer id, Date horaSorteio) {
 		super();
 		this.id = id;
-		this.numero = numero;
+		this.horaSorteio = horaSorteio;
+	}
+	
+	public Sorteio(List<Integer> resultado, Date horaSorteio, Double precoPremio) {
+		super();
+		this.resultado = resultado;
+		this.precoPremio = precoPremio;
 		this.horaSorteio = horaSorteio;
 	}
 	
@@ -40,14 +46,6 @@ public class Sorteio implements Serializable{
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Integer getNumero() {
-		return numero;
-	}
-
-	public void setNumero(Integer numero) {
-		this.numero = numero;
 	}
 
 	public List<Integer> getResultado() {
